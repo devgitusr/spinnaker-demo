@@ -6,7 +6,7 @@ metadata:
     app: {{ .Values.app.name }}-{{ .Values.app.version }}
   name: {{ .Values.app.name }}-{{ .Values.app.suffix }}
 spec:
-  replicas: 5
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: {{ .Values.app.name }}-{{ .Values.app.version }}
