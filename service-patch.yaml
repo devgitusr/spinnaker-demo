@@ -12,5 +12,5 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    app: demo-0.0.1
+    app: demo-0.0.2
   type: LoadBalancer

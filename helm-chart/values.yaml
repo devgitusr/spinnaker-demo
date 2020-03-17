@@ -6,8 +6,8 @@ replicaCount: 1
 
 app:
   name: demo
-  version: 0.0.1
-  suffix: v0-0-1 # deployment, service named {{ .Values.app.name }}-{{ .Values.app.suffix }}
+  version: 0.0.2
+  suffix: v0-0-2 # deployment, service named {{ .Values.app.name }}-{{ .Values.app.suffix }}
 
 image:
   repository: devdockerusr/spinnaker-demo
