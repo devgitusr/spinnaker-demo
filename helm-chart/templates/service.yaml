@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: {{ .Values.app.name }}-{{ .Values.app.version }}
+  name: {{ .Values.app.name }}-{{ .Values.app.suffix }}
+spec:
+  ports:
+  - name: http
+    port: {{ .Values.service.port }}
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: {{ .Values.app.name }}-{{ .Values.app.version }}
+  type: LoadBalancer

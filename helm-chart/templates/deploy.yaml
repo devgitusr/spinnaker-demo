@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: {{ .Values.app.name }}-{{ .Values.app.version }}
+  name: {{ .Values.app.name }}-{{ .Values.app.suffix }}
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: {{ .Values.app.name }}-{{ .Values.app.version }}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: {{ .Values.app.name }}-{{ .Values.app.version }}
+    spec:
+      containers:
+      - image: {{ .Values.image.repository }}:{{ .Values.app.version }}
+        name: spin-demo
